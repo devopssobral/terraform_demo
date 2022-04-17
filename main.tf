@@ -1,9 +1,8 @@
 terraform {
   backend "s3" {
-    bucket     = "terraform-sobral-devops-lab-tf-state"
-    key        = "terraform-test.tfstate"
-    region     = "us-east-2"
-    encryption = true
+    bucket = "terraform-sobral-devops-lab-tf-state"
+    key    = "terraform-test.tfstate"
+    region = "us-east-2"
   }
 
   required_providers {
@@ -20,22 +19,6 @@ resource "aws_vpc" "main" {
   tags = {
     Name = "vpc_sobral_lab"
   }
-}
-
-data "aws_ami" "ubuntu" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"] # Canonical
 }
 
 resource "aws_instance" "web" {
