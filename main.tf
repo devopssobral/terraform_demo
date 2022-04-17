@@ -22,10 +22,12 @@ resource "aws_key_pair" "key_pair_sobral" {
   public_key = tls_private_key.tls_key.public_key_openssh
 }
 
+#TODO: create security group to connect ssh
+
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
-  key_name      = "key_pair_sobral"
+  key_name      = aws_key_pair.key_pair_sobral.key_name
 
   tags = {
     Name = "sobral-lab"
