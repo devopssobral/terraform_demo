@@ -13,3 +13,11 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
+
+data "http" "myip" {
+  url = "https://api.ipify.org"
+
+  request_headers = {
+    Accept = "application/text"
+  }
+}

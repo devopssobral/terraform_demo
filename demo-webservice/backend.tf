@@ -4,10 +4,4 @@ terraform {
     key    = "terraform-test.tfstate"
     region = "us-east-2"
   }
-
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-  }
 }
