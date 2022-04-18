@@ -16,4 +16,4 @@ sudo usermod -aG docker $USER
 
 ## Setup docker service (with swarm)
 docker swarm init
-docker service create --replicas 1 --detach --publish 80:80 --name webserver nginxdemos/hello:0.3
+docker service create --replicas 1 --detach --publish 80:8080 --name webserver pengbai/docker-supermario
