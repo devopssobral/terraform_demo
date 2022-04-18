@@ -14,7 +14,7 @@ resource "aws_security_group" "allow_ssh" {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
-    cidr_blocks      = [data.http.myip.body]
+    cidr_blocks      = ["${data.http.myip.body}/32"]
     ipv6_cidr_blocks = ["::/0"]
   }
 
