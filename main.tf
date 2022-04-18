@@ -18,7 +18,7 @@ resource "tls_private_key" "tls_key" {
 }
 
 resource "aws_key_pair" "key_pair_sobral" {
-  key_name   = "my_super_key"
+  key_name   = var.key_name
   public_key = tls_private_key.tls_key.public_key_openssh
 }
 
@@ -54,6 +54,6 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   tags = {
-    Name = "sobral-lab"
+    Name = var.instance_name
   }
 }
