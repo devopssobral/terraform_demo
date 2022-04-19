@@ -6,7 +6,8 @@ Demos de Terraform + AWS usadas no meetup.
 * Conta da AWS e credenciais configuradas localmente
 
 ## `demo-s3`
-Configura um [bucket s3](https://aws.amazon.com/pt/s3/) na AWS com as seguintes configurações
+Configura um [bucket s3](https://aws.amazon.com/pt/s3/) na AWS.
+Essa demo não tem [backend](https://www.terraform.io/language/settings/backends) configurado, o estado é salvo localmente.
 
 ## `demo-website`
 Configura uma [instância EC2](https://aws.amazon.com/pt/ec2/) com as seguintes configurações:
@@ -15,7 +16,7 @@ Configura uma [instância EC2](https://aws.amazon.com/pt/ec2/) com as seguintes 
 * Instala e configura docker na máquina
 * Executa container da demo na porta 80
 
-A infraestrutura demora em torno de 1min30s para disponível, quando estiver, executar o seguinte para consultar o IP público:
+A infraestrutura demora em torno de 1min30s para ficar disponível, quando estiver, executar o seguinte para consultar o IP público:
 `terraform output instance_public_ip_addr`
 
 
