@@ -15,6 +15,9 @@ Configura uma [instância EC2](https://aws.amazon.com/pt/ec2/) com as seguintes 
 * Instala e configura docker na máquina
 * Executa container da demo na porta 80
 
+A infraestrutura demora em torno de 1min30s para disponível, quando estiver, executar o seguinte para consultar o IP público:
+`terraform output instance_public_ip_addr`
+
 
 
 
